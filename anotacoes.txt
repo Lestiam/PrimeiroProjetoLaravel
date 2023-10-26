@@ -34,3 +34,18 @@ Alternativa correta! Assim como podemos versionar nosso código com GIT, podemos
  Se a URL precisar ser alterada no futuro, nada no código precisará ser mexido.
  Alternativa correta! Se nós precisarmos mudar de /series/create para /serie/criar, nosso código vai continuar funcionando perfeitamente,
  sem nenhum link ou redirecionamento quebrar.
+
+5)Neste vídeo, ao invés de termos um simples link como nosso botão de exclusão, nós criamos um formulário.
+ Por que não é interessante ter um link com ações destrutivas?
+
+ Porque um link pode ser acessado por crawlers de busca que vão performar ações destrutivas em nosso sistema.
+ Alternativa correta! Ao ter um link que remova algo, faça logout ou algo do tipo, robôs que seguem links podem acabar causando um certo estrago em nossa aplicação.
+  Ações destrutivas devem sempre ser feitas em requisições POST através de formulários.
+
+6)Nós enviamos o ID da série a ser excluída através de um parâmetro em nossa rota.
+  Como podemos definir um parâmetro chamado id em uma rota para /teste usando o verbo GET?
+
+  Route::get('/teste/{id}', …);
+
+  Alternativa correta! Desta forma, nosso Request vai ter uma propriedade ID acessível. Nós também podemos ter um parâmetro chamado $id em nosso controller,
+  sem precisar acessar o $request.
