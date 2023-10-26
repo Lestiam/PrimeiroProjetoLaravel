@@ -23,3 +23,14 @@ Alternativa correta! Assim como podemos versionar nosso código com GIT, podemos
  O Laravel possui uma proteção contra um ataque chamado Cross-Site Request Forgery (CSRF). Todo formulário que nós enviamos para o Laravel precisa ter uma informação extra:
  um token. Esse token permite que o Laravel verifique que a requisição realmente foi enviada por um formulário do site.
  Felizmente essa informação é simples de se adicionar, bastando usar a diretiva @csrf do blade. :-D
+
+ 3)O que acontece se algum atributo passado no array como parâmetro para o método create não estiver no array de $fillable daquela model?
+ Este atributo simplesmente não será preenchido.
+ Alternativa correta! O que não estiver no $fillable, ao tentar ser preenchido com mass assignment será simplesmente ignorado.
+
+ 4)Vimos neste vídeo como dar nomes para nossas rotas e como usar esses nomes para criar links e para redirecionar os usuários.
+ Qual a vantagem de se ter nomes em nossas rotas?
+
+ Se a URL precisar ser alterada no futuro, nada no código precisará ser mexido.
+ Alternativa correta! Se nós precisarmos mudar de /series/create para /serie/criar, nosso código vai continuar funcionando perfeitamente,
+ sem nenhum link ou redirecionamento quebrar.

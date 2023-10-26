@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/series');
 });
 
-Route::get('/series', [SeriesController::class, 'index']); //index é o nome da função
-Route::get('/series/criar', [SeriesController::class, 'create']); //create é o nome da função
-Route::post('/series/salvar', [SeriesController::class, 'store']); //store é o nome da função que salva no banco de dados
+Route::resource('/series', SeriesController::class);
+//Route::controller(SeriesController::class)->group(function () {
+//    Route::get('/series', 'index')->name('series.index'); //index é o nome da função
+//    Route::get('/series/criar', 'create')->name('series.create'); //create é o nome da função e o name serve para dar um nome a rota
+//    Route::post('/series/salvar', 'store')->name('series.store'); //store é o nome da função que salva no banco de dados
+//});
+

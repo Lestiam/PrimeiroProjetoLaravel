@@ -1,5 +1,5 @@
 <x-layout title="Séries">
-    <a href="/series/criar" class="btn btn-dark mb-2">Adicionar </a>
+    <a href="{{ route('series.create') }}" class="btn btn-dark mb-2">Adicionar </a>
     {{--o x-layout é um componente que está em resources/views/series/components/layout.blade.php--}}
     <ul class="list-group">
         {{-- O ul é o que aparece dentro da tag slot no layout.blade.php--}}

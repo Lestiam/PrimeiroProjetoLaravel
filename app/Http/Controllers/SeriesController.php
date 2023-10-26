@@ -24,11 +24,8 @@ class SeriesController extends Controller
 
     public function store(Request $request)
     {
-        $nomeSerie = $request->input('nome'); //o input faz um filtro de string para evitar ataques de sql injection
-        $serie = new Serie(); //cria um objeto do tipo Serie
-        $serie->nome = $nomeSerie; //atribui o valor do input para o atributo nome do objeto
-        $serie->save(); //salva o objeto no banco de dados
+        Serie::create($request->all());
 
-        return redirect('/series');
+        return to_route('series.index'); //to_route é uma função do laravel que redireciona para uma rota
     }
 }
