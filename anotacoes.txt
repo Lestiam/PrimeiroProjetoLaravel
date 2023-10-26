@@ -1,0 +1,8 @@
+npm run mix - Agora em todo momento que no curso eu digitar npm run dev, você vai executar npm run mix.
+Isso deve ser o suficiente para você seguir usando o Mix como ferramenta para o front-end.
+
+1)Qual o propósito da função asset?
+Nos retornar o caminho de um asset (arquivo estático) que pode inclusive estar em outro domínio.
+
+Alternativa correta! Em nosso projeto, todos os assets estão no local padrão, que é a pasta public. Mas em projetos mais complexos,
+nós podemos configurar um projeto separado para ter nossos assets, usando CDN, por exemplo. Com isso, a função asset verifica se há essa configuração e já busca o domínio correto.
