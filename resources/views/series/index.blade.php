@@ -7,7 +7,7 @@
         {{--o $series é um array, então o foreach vai percorrer cada item do array e colocar dentro da variável $serie, que vai ser usada dentro do foreach para exibir cada item do array $series--}}
         @foreach ($series as $serie)
             {{--o @ vem do blade --}}
-            <li class="list-group-item">{{ $serie }}</li> {{-- essa sintaxe faz basicamente um ecko  --}}
+            <li class="list-group-item">{{ $serie->nome }}</li> {{-- essa sintaxe faz basicamente um ecko  --}}
         @endforeach
     </ul>
 </x-layout>

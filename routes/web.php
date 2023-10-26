@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('/series', [SeriesController::class, 'index']); //index é o nome da função
 Route::get('/series/criar', [SeriesController::class, 'create']); //create é o nome da função
+Route::post('/series/salvar', [SeriesController::class, 'store']); //store é o nome da função que salva no banco de dados

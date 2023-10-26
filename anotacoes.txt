@@ -5,4 +5,21 @@ Isso deve ser o suficiente para você seguir usando o Mix como ferramenta para o
 Nos retornar o caminho de um asset (arquivo estático) que pode inclusive estar em outro domínio.
 
 Alternativa correta! Em nosso projeto, todos os assets estão no local padrão, que é a pasta public. Mas em projetos mais complexos,
-nós podemos configurar um projeto separado para ter nossos assets, usando CDN, por exemplo. Com isso, a função asset verifica se há essa configuração e já busca o domínio correto.
+nós podemos configurar um projeto separado para ter nossos assets, usando CDN, por exemplo. Com isso, a função asset verifica se há essa
+configuração e já busca o domínio correto.
+
+2)Para criar o schema no banco de dados no último vídeo nós utilizamos migrations.
+Além de simplesmente executar um CREATE TABLE, quais outras vantagens obtemos ao utilizar migrations?
+
+Sincronização dos bancos locais da equipe.
+Ao realizar uma alteração no banco, podemos solicitar que nossos colegas de equipe rodem a migration
+recém criada e seus bancos de dados locais estarão com o schema atualizado.
+
+Versionamento do banco.
+Alternativa correta! Assim como podemos versionar nosso código com GIT, podemos versionar nosso schema do banco de dados com migrations.
+ Podemos reverter migrations, executar uma a uma, executar todas de uma vez, etc. No nosso caso, por exemplo, o método down
+ (que reverte a migration) simplesmente remove a tabela series. Isso é o necessário para desfazer esta alteração em nosso banco.
+
+ O Laravel possui uma proteção contra um ataque chamado Cross-Site Request Forgery (CSRF). Todo formulário que nós enviamos para o Laravel precisa ter uma informação extra:
+ um token. Esse token permite que o Laravel verifique que a requisição realmente foi enviada por um formulário do site.
+ Felizmente essa informação é simples de se adicionar, bastando usar a diretiva @csrf do blade. :-D
