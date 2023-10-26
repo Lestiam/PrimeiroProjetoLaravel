@@ -14,13 +14,12 @@ class SeriesController extends Controller
             'Lost',
             'Grey\'s Anatomy'
         ];
+        //busca um arquivo de visualização e monta a resposta
+        return view('series.index')->with('series', $series); //compact serve para passar variáveis para a view com o mesmo nome. O series.index é o nome do arquivo que será buscado na pasta resources/views/series
+    }
 
-        $html = '<ul>';
-        foreach ($series as $serie) {
-            $html .= "<li>$serie</li>";
-        }
-        $html .= '</ul>';
-
-        return  $html;
+    public function create()
+    {
+        return view('series.create');
     }
 }

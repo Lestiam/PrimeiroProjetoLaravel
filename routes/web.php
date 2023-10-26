@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/series', [SeriesController::class, 'index']); //listarSeries é o nome da função
+Route::get('/series', [SeriesController::class, 'index']); //index é o nome da função
+Route::get('/series/criar', [SeriesController::class, 'create']); //create é o nome da função
