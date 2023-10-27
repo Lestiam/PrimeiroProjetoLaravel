@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('seasons', function (Blueprint $table) {
             $table->id();
-            $table->unsignedTinyInteger('numero'); //inteiro pequeno positivo
-            $table->foreignId('series_id')->constrained(); //crio a chave estrangeira (foreign key) para a tabela series. Faz o relacionamento entre a temporada e a série. Só essa linha faz o mesmo que as duas linhas comentadas abaixo
+            $table->unsignedTinyInteger('number'); //inteiro pequeno positivo
+            $table->foreignId('series_id')->constrained()->onDelete('cascade'); //crio a chave estrangeira (foreign key) para a tabela series. E quando eu deletar uma série, também vou deletar todas as suas tempordas. Faz o relacionamento entre a temporada e a série. Só essa linha faz o mesmo que as duas linhas comentadas abaixo
 
 //            $table->unsignedBigInteger('series_id');
 //            $table->foreign('series_id')->references('id')->on('series'); //crio a chave estrangeira (foreign key) para a tabela series. Faz o relacionamento entre a temporada e a série

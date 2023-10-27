@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SeasonsController;
 use App\Http\Controllers\SeriesController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,8 @@ Route::get('/', function () {
 
 Route::resource('/series', SeriesController::class)
     ->except(['show']); //mostra todos menos o show
+
+Route::get('/series/{series}/seasons', [SeasonsController::class, 'index'])->name('seasons.index'); //mostra todas as temporadas de uma série
 
 
 //Route::controller(SeriesController::class)->group(function () {

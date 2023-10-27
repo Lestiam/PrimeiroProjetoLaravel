@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Episode extends Model
 {
     use HasFactory;
+    protected $fillable = ['number']; //digo que o campo number pode ser preenchido em massa
     public $timestamps = false; //digo que não quero que o laravel crie os campos created_at e updated_at no banco de dados
 
     public function season()
