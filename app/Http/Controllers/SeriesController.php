@@ -12,7 +12,7 @@ class SeriesController extends Controller
 {
     public function index(Request $request)
     {
-        $series = Serie::query()->orderBy('nome')->get(); //query é uma função do laravel que retorna um objeto do tipo query builder, que é uma classe do laravel que permite fazer consultas no banco de dados. O método orderBy ordena os resultados pelo nome
+        $series = Serie::all(); //query é uma função do laravel que retorna um objeto do tipo query builder, que é uma classe do laravel que permite fazer consultas no banco de dados. O método orderBy ordena os resultados pelo nome
         $mensagemSucesso = session('mensagem.sucesso'); //atraves da minha sessão, eu estou validando se existe uma mensagem de sucesso, se existir, eu pego ela e passo para a view, se não, ele retorna nulo
         return view('series.index')->with('series', $series)
             ->with('mensagemSucesso', $mensagemSucesso);
@@ -44,6 +44,7 @@ class SeriesController extends Controller
 
     public function edit(Serie $series)
     {
+        //dd($series->temporadas); //se eu acessar como se fosse uma propriedade eu acesso a coleção, eu já pego as tempordas. Se eu acessar como se fosse um método (temporadas()), eu acesso o relacionamento, uma possibilidade filtrar isso por exemplo
         return view('series.edit')->with('serie', $series);
     }
 
