@@ -33,3 +33,5 @@ Route::get('/series/{series}/seasons', [SeasonsController::class, 'index'])->nam
 //Route::delete('/series/destroy/{serie}', [SeriesController::class, 'destroy'])
 //    ->name('series.destroy'); //o resource não cria a rota de delete, então eu crio ela aqui, passo como parametro a série que eu quero deletar e o método destroy do controller
 
+
+
