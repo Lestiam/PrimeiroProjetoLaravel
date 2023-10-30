@@ -49,3 +49,12 @@ Alternativa correta! Assim como podemos versionar nosso código com GIT, podemos
 
   Alternativa correta! Desta forma, nosso Request vai ter uma propriedade ID acessível. Nós também podemos ter um parâmetro chamado $id em nosso controller,
   sem precisar acessar o $request.
+
+  7)Neste vídeo nós criamos uma interface para representar um repositório de séries.
+    Qual a principal vantagem de termos uma interface?
+
+    Podemos ter diferentes implementações deste repositório.
+
+    Alternativa correta! Se eu quiser migrar o meu sistema de Eloquent para Doctrine, por exemplo, posso fazer isso em uma nova classe,
+    mantendo a classe atual no projeto durante a migração por exemplo. Basta que ambas implementem a mesma interface. Posso também ter implementações específicas
+    para testes como um repositório em memória, por exemplo. Isso nos dá bastante flexibilidade.
